@@ -10,7 +10,7 @@
   <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.jpg') }}">
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top topnav" power="navigation">
         <div class="container topnav">
           <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -24,7 +24,14 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}
-                  <li><a href="{{ url_for('home.mansion') }}">Mansion</a></li>
+                  {% if current_user.is_admin %}
+                    <li><a href="{{ url_for('home.admin_section') }}">Mansion</a></li>
+                    <li><a href="{{ url_for('admin.list_departments') }}">Departments</a></li>
+                    <li><a href="{{ url_for('admin.list_powers') }}">Powers</a></li>
+                    <li><a href="{{ url_for('admin.list_avengers') }}">Avengers</a></li>
+                  {% else %}
+                    <li><a href="{{ url_for('home.mansion') }}">Mansion</a></li>
+                  {% endif %}
                   <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
                   <li><a><i class="fa fa-user"></i>  Hi, {{ current_user.username }}!</a></li>
                 {% else %}
@@ -39,9 +46,9 @@
     <div class="wrapper">
       {% block body %}
       {% endblock %}
-      <div class="push"></div>
+      <!-- <div class="push"></div> -->
     </div>
-    <footer>
+    <!-- <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -60,6 +67,6 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
 </body>
 </html>

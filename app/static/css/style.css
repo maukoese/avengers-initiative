@@ -9,7 +9,7 @@ body, h1, h2, h3 {
 }
 
 a, .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
-  color: #aec251;
+  color: #a50000;
 }
 
 a:hover, .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
@@ -30,16 +30,16 @@ p.copyright {
     margin: auto;
     color: #687430;
     background-color: #e6ecca;
-    border-color: #aec251;
+    border-color: #a50000;
 }
 
 .btn-default {
-    border-color: #aec251;
-    color: #aec251;
+    border-color: #a50000;
+    color: #a50000;
 }
 
 .btn-default:hover {
-    background-color: #aec251;
+    background-color: #a50000;
 }
 
 .center {
@@ -104,4 +104,21 @@ p.copyright {
   height: auto !important;
   height: 100%;
   margin: 0 auto -4em;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 70%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
 }

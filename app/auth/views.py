@@ -51,7 +51,10 @@ def login():
             login_user(avenger)
 
             # redirect to the mansion page after login
-            return redirect(url_for('home.mansion'))
+            if avenger.is_admin:
+                return redirect(url_for('home.admin_mansion'))
+            else:
+                return redirect(url_for('home.mansion'))
 
         # when login details are incorrect
         else:
